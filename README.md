@@ -24,9 +24,8 @@ BabyGrowth is a user-friendly web application designed to help moms (and dads!) 
 |-------------------|-----------------------------------------------|
 | 🌐 **React.js**    | Frontend development for an interactive UI.  |
 | 🔙 **Node.js**     | Backend API for handling business logic.     |
-| 🛢️ **MongoDB**     | Database for storing user and child data.    |
-| ☁️ **AWS S3**       | For secure file and data backups.            |
-| 🔒 **JWT**         | Secure authentication for user data.         |
+| 🛢️ **SQL**     | Database for storing user and child data.    |
+
 
 ---
 
@@ -42,7 +41,7 @@ Follow these steps to set up the BabyGrowth app locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/BabyGrowth.git
+git clone [https://github.com/yourusername/BabyGrowth.git]
 
 # Navigate to the project folder
 cd BabyGrowth
