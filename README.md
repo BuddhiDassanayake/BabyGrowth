@@ -35,7 +35,7 @@ Follow these steps to set up the BabyGrowth app locally:
 
 ### Prerequisites  
 - [Node.js](https://nodejs.org/)  
-- [SQL] (https://www.mysql.com/downloads)
+- [SQL](https://www.mysql.com/downloads)
 
 ### Installation  
 
