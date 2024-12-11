@@ -4,7 +4,6 @@
 BabyGrowth is a user-friendly web application designed to help moms (and dads!) track their child’s growth, milestones, vaccination schedules, and more. 🌟  
 
 ---
----
 
 ## 🌟 Features Overview
 
@@ -36,7 +35,7 @@ Follow these steps to set up the BabyGrowth app locally:
 
 ### Prerequisites  
 - [Node.js](https://nodejs.org/)  
-- [MongoDB](https://www.mongodb.com/)  
+- [SQL] (https://www.mysql.com/downloads)
 
 ### Installation  
 
