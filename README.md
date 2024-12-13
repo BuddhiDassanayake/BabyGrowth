@@ -51,3 +51,8 @@ npm install
 
 # Start the development server
 npm start
+
+---
+
+© Buddhi Dassanayake 2024. All rights reserved.
+
