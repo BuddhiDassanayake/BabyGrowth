@@ -24,7 +24,7 @@ BabyGrowth is a user-friendly web application designed to help moms (and dads!) 
 |-------------------|-----------------------------------------------|
 | 🌐 **React.js**    | Frontend development for an interactive UI.  |
 | 🔙 **Node.js**     | Backend API for handling business logic.     |
-| 🛢️ **SQL**     | Database for storing user and child data.    |
+| 🛢️ **SQL**     | Database for storing user and child growing pattern.    |
 
 
 ---
