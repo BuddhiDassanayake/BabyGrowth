@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import CardComponent from "./Card";
 import "./CardCarousel.css";
 
 const cardsData = [
@@ -23,13 +23,13 @@ const cardsData = [
 
 const CardCarousel = () => {
   const handleAdd = (title) => {
-    alert(`${title} added successfully!`);
+    console.log(`${title} added successfully!`); // Just for logging
   };
 
   return (
-    <div className="carousel">
+    <div className="carousel" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
       {cardsData.map((card, index) => (
-        <Card
+        <CardComponent
           key={index}
           title={card.title}
           description={card.description}
