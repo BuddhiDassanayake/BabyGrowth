@@ -1,0 +1,16 @@
+/* You can add custom styles if needed, but MUI handles most of the layout. */
+
+/* Style for the card container if you want additional customization */
+.carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 10px;
+    width: 300px; /* Adjust card width if needed */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height:400px;
+}
+  
