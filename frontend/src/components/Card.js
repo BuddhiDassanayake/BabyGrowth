@@ -62,10 +62,7 @@ const CardComponent = ({ title, description, onAdd }) => {
           justifyContent: "center",
           alignItems: "center",
           boxShadow: 2,
-          "&:hover": {
-            transform: "scale(1.1)",
-            boxShadow: 6,
-          },
+         
         }}
         onClick={handleAddClick}
       >
