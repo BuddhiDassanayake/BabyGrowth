@@ -1,91 +1,117 @@
 import React, { useState } from "react";
-import { Card, CardContent, Button, Snackbar, Alert, Typography } from "@mui/material";
-import { Add } from "@mui/icons-material"; // Material-UI add icon
 import "./Card.css";
 
-const CardComponent = ({ title, description, onAdd }) => {
+const CardComponent = ({ title, description }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [formData, setFormData] = useState({
+    date: new Date().toISOString().split("T")[0], // Default to today's date
+    measurement: "",
+    specialNotes: "",
+  });
   const [showMessage, setShowMessage] = useState(false);
 
-  const handleAddClick = () => {
-    setShowMessage(true);
-    // Hide the message after 3 seconds
-    setTimeout(() => setShowMessage(false), 3000);
-    onAdd(title);
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSave = () => {
+    // Send the form data to the backend
+    fetch('http://localhost:5000/api/save-measurements', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData), // Send form data as JSON
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to save data');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Saved Data:', data);
+        setShowMessage(true); // Show success message
+        setTimeout(() => setShowMessage(false), 3000); // Hide message after 3 seconds
+      })
+      .catch((error) => {
+        console.error('Error saving data:', error);
+      });
+  };
+  
+
   return (
-    <Card
-      sx={{
-        width: "300px", // Custom card width
-        height: "400px", // Custom card height
-        position: "relative",
-        margin: 2,
-        boxShadow: 3,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end", // Push content to the bottom
-        padding: 2,
-        transition: "transform 0.3s, box-shadow 0.3s", // Smooth animation
-        "&:hover": {
-          transform: "scale(1.05)", // Slightly enlarge the card on hover
-          boxShadow: 6, // Increase shadow intensity on hover
-        },
-      }}
-    >
-      <CardContent
-        sx={{
-          textAlign: "center", // Center align text
-          marginBottom: "60px", // Space above the plus button
-        }}
-      >
-        <Typography variant="h6" component="h3">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          {description}
-        </Typography>
-      </CardContent>
-
-      {/* Plus icon button */}
-      <Button
-        variant="contained"
-        color="primary"
-        sx={{
-          position: "absolute",
-          bottom: 10,
-          left: "50%",
-          transform: "translateX(-50%)",
-          borderRadius: "50%",
-          width: 50,
-          height: 50,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          boxShadow: 2,
-         
-        }}
-        onClick={handleAddClick}
-      >
-        <Add sx={{ fontSize: 30 }} />
-      </Button>
-
-      {/* Notification inside the card */}
-      {showMessage && (
-        <Snackbar
-          open={showMessage}
-          autoHideDuration={3000} // Duration for the message
-          onClose={() => setShowMessage(false)}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
+    <div className="card card-large" style={{ padding: "20px", margin: "20px", borderRadius: "12px", boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", flex: "1" }}>
+      <div className="card-header" style={{ display: "flex", flexDirection: "column", gap: "10px", paddingBottom: "15px", borderBottom: "2px solid #34ccfa" }}>
+        <h3 style={{ color: "#664254", margin: 0, fontSize: "1.5rem" }}>{title}</h3>
+        <p style={{ color: "#664254", margin: 0, fontSize: "1rem" }}>{description}</p>
+        <button 
+          className="toggle-button" 
+          onClick={toggleExpand} 
+          style={{ backgroundColor: "#34ccfa", color: "#ffffff", alignSelf: "flex-start", padding: "8px 16px", borderRadius: "8px", border: "none", cursor: "pointer" }}
         >
-          <Alert onClose={() => setShowMessage(false)} severity="success" sx={{ width: "100%" }}>
-            {title} added successfully!!✅
-          </Alert>
-        </Snackbar>
+          {isExpanded ? "-" : "+"}
+        </button>
+      </div>
+      {isExpanded && (
+        <div className="card-body" style={{ backgroundColor: "#fef8f8", padding: "20px", borderRadius: "10px", marginTop: "15px" }}>
+          <div className="form-group" style={{ marginBottom: "15px" }}>
+            <label htmlFor="date" style={{ color: "#664254", marginBottom: "5px", display: "block" }}>Date:</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleInputChange}
+              style={{ border: "1px solid #34ccfa", borderRadius: "5px", padding: "8px", width: "100%" }}
+            />
+          </div>
+          <div className="form-group" style={{ marginBottom: "15px" }}>
+            <label htmlFor="measurement" style={{ color: "#664254", marginBottom: "5px", display: "block" }}>Measurement:</label>
+            <input
+              type="text"
+              id="measurement"
+              name="measurement"
+              value={formData.measurement}
+              onChange={handleInputChange}
+              placeholder={`Enter measurement for ${title}`}
+              style={{ border: "1px solid #34ccfa", borderRadius: "5px", padding: "8px", width: "100%" }}
+            />
+          </div>
+          <div className="form-group" style={{ marginBottom: "15px" }}>
+            <label htmlFor="specialNotes" style={{ color: "#664254", marginBottom: "5px", display: "block" }}>Special Notes:</label>
+            <textarea
+              id="specialNotes"
+              name="specialNotes"
+              value={formData.specialNotes}
+              onChange={handleInputChange}
+              placeholder="Enter any additional notes"
+              style={{ border: "1px solid #34ccfa", borderRadius: "5px", padding: "8px", width: "100%", resize: "none", height: "80px" }}
+            ></textarea>
+          </div>
+          <button 
+            className="save-button" 
+            onClick={handleSave} 
+            style={{ backgroundColor: "#f76fb3", color: "#ffffff", border: "none", borderRadius: "5px", padding: "10px 15px", cursor: "pointer", width: "100%" }}
+          >
+            Save
+          </button>
+        </div>
       )}
-    </Card>
+      {showMessage && (
+        <div 
+          className="notification" 
+          style={{ backgroundColor: "#fef8f8", color: "#664254", border: "1px solid #34ccfa", borderRadius: "5px", padding: "10px", marginTop: "10px", textAlign: "center" }}
+        >
+          {title} measurement saved successfully! ✅
+        </div>
+      )}
+    </div>
   );
 };
 
