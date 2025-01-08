@@ -1,10 +1,12 @@
 import React from "react";
-
+import CardCarousel from "../Account/CardCarousel";
+import "../Account/AccountPage.css";
 const AccountPage = () => {
   return (
     <div className="account-page">
-      <h2>Welcome to your Account</h2>
-      <p>This is your account page where you can manage your data.</p>
+      <div className="bgimg">
+      <CardCarousel/>
+    </div>
     </div>
   );
 };

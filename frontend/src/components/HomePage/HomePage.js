@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import CardCarousel from "../CardCarousel";
+import CardCarousel from "../Account/CardCarousel";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
