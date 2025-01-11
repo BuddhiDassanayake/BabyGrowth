@@ -20,7 +20,7 @@ const LoginPage = () => {
   // Handle form submission for login or signup
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (isLogin) {
       // Login logic
       const loginResponse = await fetch("http://localhost:5000/api/login", {
@@ -28,13 +28,21 @@ const LoginPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
-      const loginData = await loginResponse.json();
+  
+      const loginData = await loginResponse.json(); // Parse the JSON response
+  
       if (loginResponse.ok) {
         setMessage("Login successful!");
         setSeverity("success");
+  
+        if (loginData.userId) {
+          localStorage.setItem("userId", loginData.userId); // Save user ID to localStorage
+        } else {
+          console.error("User ID is missing in the response.");
+        }
+  
         setOpen(true); // Show success notification
-        navigate("/account"); // Redirect to the account page on success
+        navigate("/account"); // Redirect to the account page
       } else {
         setMessage(loginData.error); // Show error message if login fails
         setSeverity("error");
@@ -47,8 +55,9 @@ const LoginPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
       });
-
+  
       const signupData = await signupResponse.json();
+  
       if (signupResponse.ok) {
         setMessage("Account created successfully!");
         setSeverity("success");
@@ -61,6 +70,7 @@ const LoginPage = () => {
       }
     }
   };
+  
 
   // Handle closing the Snackbar
   const handleCloseSnackbar = () => {

@@ -16,22 +16,39 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
     console.error('Error opening database:', err.message);
   } else {
     console.log('Connected to SQLite database.');
+
+    // Create `users` table
+    db.run(`
+      CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        email TEXT UNIQUE,
+        password TEXT
+      )
+    `);
+
+    // Create `measurements` table
+    db.run(`
+      CREATE TABLE IF NOT EXISTS measurements (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        date TEXT,
+        measurement TEXT,
+        specialNotes TEXT,
+        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+      )
+    `);
   }
 });
 
-// Create Users Table for authentication with email
-db.run(`
-  CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    email TEXT UNIQUE,
-    password TEXT
-  )
-`);
-
-// API Endpoint for User Registration with email
+// ==================== User Authentication ====================
+// Signup
 app.post('/api/signup', (req, res) => {
   const { name, email, password } = req.body;
+
+  if (!name || !email || !password) {
+    return res.status(400).send({ error: 'All fields are required.' });
+  }
 
   const sql = `INSERT INTO users (name, email, password) VALUES (?, ?, ?)`;
   db.run(sql, [name, email, password], function (err) {
@@ -44,9 +61,13 @@ app.post('/api/signup', (req, res) => {
   });
 });
 
-// API Endpoint for User Login with email
+// Login
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).send({ error: 'Email and password are required.' });
+  }
 
   const sql = `SELECT * FROM users WHERE email = ?`;
   db.get(sql, [email], (err, row) => {
@@ -61,11 +82,30 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-// API Endpoint to Get User Profile
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const sql = `SELECT id, password FROM users WHERE email = ?`;
+
+  db.get(sql, [email], (err, row) => {
+    if (err) {
+      console.error('Error during login:', err.message);
+      res.status(500).send({ error: 'Internal server error.' });
+    } else if (row && row.password === password) {
+      res.status(200).send({ message: 'Login successful!', id: row.id }); // Include user ID in response
+    } else {
+      res.status(400).send({ error: 'Invalid email or password.' });
+    }
+  });
+});
+
+
+// ==================== User Profile Management ====================
+// Get User Profile
 app.get('/api/profile/:id', (req, res) => {
   const userId = req.params.id;
-  const sql = `SELECT id, name, email FROM users WHERE id = ?`;
 
+  const sql = `SELECT id, name, email FROM users WHERE id = ?`;
   db.get(sql, [userId], (err, row) => {
     if (err) {
       console.error('Error retrieving profile:', err.message);
@@ -78,10 +118,14 @@ app.get('/api/profile/:id', (req, res) => {
   });
 });
 
-// API Endpoint to Update User Information (Name, Email, Password)
+// Update User Profile
 app.put('/api/update-profile/:id', (req, res) => {
   const userId = req.params.id;
   const { name, email, password } = req.body;
+
+  if (!name || !email || !password) {
+    return res.status(400).send({ error: 'All fields are required.' });
+  }
 
   const sql = `UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?`;
   db.run(sql, [name, email, password, userId], function (err) {
@@ -94,39 +138,42 @@ app.put('/api/update-profile/:id', (req, res) => {
   });
 });
 
-// API Endpoint for User Logout (Placeholder)
-app.post('/api/logout', (req, res) => {
-  // Since we're not using session tokens, this endpoint can just send a message for now.
-  res.status(200).send({ message: 'User logged out.' });
-});
-
-// API Endpoint to Save Data
+// ==================== Measurements Management ====================
+// Save Measurement Data
 app.post('/api/save-measurements', (req, res) => {
-  const { date, measurement, specialNotes } = req.body;
-  const sql = `INSERT INTO measurements (date, measurement, specialNotes) VALUES (?, ?, ?)`;
-  db.run(sql, [date, measurement, specialNotes], function (err) {
+  const { user_id, date, measurement, specialNotes } = req.body;
+
+  if (!user_id || !date || !measurement) {
+    return res.status(400).send({ error: 'Missing required fields.' });
+  }
+
+  const sql = `INSERT INTO measurements (user_id, date, measurement, specialNotes) VALUES (?, ?, ?, ?)`;
+  db.run(sql, [user_id, date, measurement, specialNotes], function (err) {
     if (err) {
       console.error('Error inserting data:', err.message);
-      res.status(500).send({ error: err.message });
+      res.status(500).send({ error: 'Error saving data.' });
     } else {
       res.status(200).send({ message: 'Data saved successfully!', id: this.lastID });
     }
   });
 });
 
-// API Endpoint to Retrieve Data
-app.get('/api/measurements', (req, res) => {
-  const sql = `SELECT * FROM measurements`;
-  db.all(sql, [], (err, rows) => {
+// Retrieve Measurement Data for a Specific User
+app.get('/api/measurements/:user_id', (req, res) => {
+  const { user_id } = req.params;
+
+  const sql = `SELECT * FROM measurements WHERE user_id = ?`;
+  db.all(sql, [user_id], (err, rows) => {
     if (err) {
       console.error('Error retrieving data:', err.message);
-      res.status(500).send({ error: err.message });
+      res.status(500).send({ error: 'Error retrieving data.' });
     } else {
       res.status(200).send(rows);
     }
   });
 });
 
+// ==================== Server Listener ====================
 app.listen(port, 'localhost', () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

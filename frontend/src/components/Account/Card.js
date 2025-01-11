@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "./Card.css";
+
 
 const CardComponent = ({ title, description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [formData, setFormData] = useState({
+    user_id : 1,
     date: new Date().toISOString().split("T")[0], // Default to today's date
     measurement: "",
     specialNotes: "",
+
   });
+
+  // Fetch userId from localStorage and update formData
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId"); // Retrieve userId from localStorage
+    if (storedUserId) {
+      setFormData((prevData) => ({
+        ...prevData,
+        user_id: parseInt(storedUserId, 10), // Update user_id with stored value
+      }));
+    }
+  }, []); // Run once on component mount
+
+
   const [showMessage, setShowMessage] = useState(false);
 
   const toggleExpand = () => {
