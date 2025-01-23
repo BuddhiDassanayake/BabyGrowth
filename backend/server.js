@@ -27,7 +27,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
       )
     `);
 
-    // Create `measurements` table
+    // Create `measurements` table with an additional 'type' column
     db.run(`
       CREATE TABLE IF NOT EXISTS measurements (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,6 +35,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
         date TEXT,
         measurement TEXT,
         specialNotes TEXT,
+        type TEXT,  -- New column to store the type of measurement
         FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
       )
     `);
@@ -65,26 +66,6 @@ app.post('/api/signup', (req, res) => {
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).send({ error: 'Email and password are required.' });
-  }
-
-  const sql = `SELECT * FROM users WHERE email = ?`;
-  db.get(sql, [email], (err, row) => {
-    if (err) {
-      console.error('Error logging in:', err.message);
-      res.status(500).send({ error: 'Error logging in.' });
-    } else if (row && row.password === password) {
-      res.status(200).send({ message: 'Login successful!', userId: row.id });
-    } else {
-      res.status(400).send({ error: 'Invalid email or password.' });
-    }
-  });
-});
-
-app.post('/api/login', (req, res) => {
-  const { email, password } = req.body;
-
   const sql = `SELECT id, password FROM users WHERE email = ?`;
 
   db.get(sql, [email], (err, row) => {
@@ -98,7 +79,6 @@ app.post('/api/login', (req, res) => {
     }
   });
 });
-
 
 // ==================== User Profile Management ====================
 // Get User Profile
@@ -139,16 +119,16 @@ app.put('/api/update-profile/:id', (req, res) => {
 });
 
 // ==================== Measurements Management ====================
-// Save Measurement Data
+// Save Measurement Data with 'type' field
 app.post('/api/save-measurements', (req, res) => {
-  const { user_id, date, measurement, specialNotes } = req.body;
+  const { user_id, date, measurement, specialNotes, type } = req.body;
 
-  if (!user_id || !date || !measurement) {
+  if (!user_id || !date || !measurement || !type) {
     return res.status(400).send({ error: 'Missing required fields.' });
   }
 
-  const sql = `INSERT INTO measurements (user_id, date, measurement, specialNotes) VALUES (?, ?, ?, ?)`;
-  db.run(sql, [user_id, date, measurement, specialNotes], function (err) {
+  const sql = `INSERT INTO measurements (user_id, date, measurement, specialNotes, type) VALUES (?, ?, ?, ?, ?)`;
+  db.run(sql, [user_id, date, measurement, specialNotes, type], function (err) {
     if (err) {
       console.error('Error inserting data:', err.message);
       res.status(500).send({ error: 'Error saving data.' });
@@ -157,6 +137,10 @@ app.post('/api/save-measurements', (req, res) => {
     }
   });
 });
+
+
+
+
 
 // Retrieve Measurement Data for a Specific User
 app.get('/api/measurements/:user_id', (req, res) => {

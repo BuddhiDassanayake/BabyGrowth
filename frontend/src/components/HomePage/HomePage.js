@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import CardCarousel from "../Account/CardCarousel";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +32,9 @@ const HomePage = () => {
     <>
       {isLoading && (
         <div className="splash-screen">
-          <div className="splash-logo">👶 Baby Diary 💖</div>
+          <div className="splash-logo">
+            <img src="Welcome.svg" alt="Welcome" />
+          </div>
         </div>
       )}
 
@@ -42,10 +43,10 @@ const HomePage = () => {
         <div className="hero-section">
           <div className="hero-content">
             <div className="hero-text">
-              <h2 className="hero-title">Welcome to Baby Diary! 👶💖</h2>
-              <h6 className="hero-subtitle">
-                Track your baby's growth, milestones, and cherish every moment.
-              </h6>
+              <div className="Header"><img src="Welcome.svg"  alt="header"/></div>
+              <p className="hero-subtitle">
+                Discover a delightful way to treasure every precious moment of your baby’s journey. From first smiles to first steps, create memories that last a lifetime.
+              </p>
               <button
                 className={`hero-button ${highlightButton ? "highlight" : ""}`}
                 onClick={handleGetStarted}
@@ -64,19 +65,22 @@ const HomePage = () => {
           <h4 className="features-title">Why Choose Baby Diary?</h4>
           <div className="features-grid">
             <div className="feature-box">
-              <h6 className="feature-title">📈 Growth Tracking</h6>
+              <h6 className="feature-title">📈 Growth Tracking
+              </h6>
               <p className="feature-description">
                 Monitor your baby's height, weight, and head circumference over time.
               </p>
             </div>
             <div className="feature-box">
-              <h6 className="feature-title">🎉 Milestone Tracker</h6>
+              <h6 className="feature-title">🎉 Milestone Tracker
+              </h6>
               <p className="feature-description">
                 Capture your baby's first steps, words, and other special moments.
               </p>
             </div>
             <div className="feature-box">
-              <h6 className="feature-title">💉 Vaccination Reminders</h6>
+              <h6 className="feature-title">💉 Vaccination Reminders
+              </h6>
               <p className="feature-description">
                 Stay updated with immunization schedules and set reminders.
               </p>
@@ -92,7 +96,7 @@ const HomePage = () => {
           className="footer-image"
         />
       </div>
-      <CardCarousel />
+
       {/* Footer Section */}
       <footer className="footer">
         BabyGrowth 2024 © Developed by Buddhi Dassanayake

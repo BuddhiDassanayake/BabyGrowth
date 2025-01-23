@@ -1,11 +1,10 @@
 .bgimg{
   position: relative;
-  min-height: 100vh;
+  min-height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #f9f3f3, #fdfdfd);
-  font-family: "Arial", sans-serif;
   overflow: hidden;
   background-image: 
     linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
@@ -15,3 +14,34 @@
   background-attachment: fixed;
   background-position: center;
 }
+.footer {
+  position: relative; /* Position it relative to the parent */
+  bottom: 0; /* Place it at the bottom of the container */
+  width: 100%; /* Ensure it spans the width of the container */
+  background-color: rgba(248, 249, 250, 0.8); /* Semi-transparent background */
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #6c757d;
+
+}
+
+
+.greeting 
+{
+  
+  font-size: 2.5rem; /* Large font size for emphasis */
+  font-family: "Poppins", sans-serif; /* Match your font choice */
+  font-weight: 600; /* Slightly bold for better visibility */
+  margin: 20px 0; /* Add spacing around the text */
+  text-align: center; /* Center-align the text */
+  position: absolute; /* Place it at the top-center */
+  top: 20px; /* Adjust vertical position */
+  left: 50%; /* Horizontal centering */
+  transform: translateX(-50%); /* Center perfectly */
+  color: #ffffff; /* Soft pastel purple to match a baby-friendly theme */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Gentle shadow for depth */
+
+}
+
+
