@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CardComponent from "../Account/Card";
 import "./CardCarousel.css";
 
@@ -22,24 +22,28 @@ const cardsData = [
 ];
 
 const CardCarousel = () => {
-  const handleAdd = (title) => {
-    console.log(`${title} added successfully!`); // Just for logging
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleCardClick = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
-    <div className="carousel" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+    <div
+      className="carousel"
+      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+    >
       {cardsData.map((card, index) => (
-        <CardComponent
-          key={index}
-          title={card.title}
-          description={card.description}
-          onAdd={() => handleAdd(card.title)}
-        />
+        <div key={index} onClick={() => handleCardClick(index)}>
+          <CardComponent
+            title={card.title}
+            description={card.description}
+            expanded={expandedIndex === index} // Pass the expanded state to the CardComponent
+          />
+        </div>
       ))}
     </div>
   );
 };
 
 export default CardCarousel;
-
-

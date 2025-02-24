@@ -1,18 +1,24 @@
-.card {
+.toothcard {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    border: 1px solid #ddd;
+    justify-items: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
   }
   
-  .card-body {
+  .toothcard-body {
     padding: 20px;
     background-color: #fff;
+    border-radius: 20px;
+    width: 800px;
+    height: auto;
+    justify-content: center;
+  
   }
   
-  .card-title {
+  .toothcard-title {
     font-size: 1.5em;
     margin-bottom: 15px;
     color: #333;

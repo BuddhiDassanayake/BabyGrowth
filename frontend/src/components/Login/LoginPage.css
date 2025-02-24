@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f9f3f3, #fdfdfd);
   overflow: hidden;
   background-image: 
     linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),

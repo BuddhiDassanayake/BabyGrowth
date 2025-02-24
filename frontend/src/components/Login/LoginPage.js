@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import { useNavigate } from "react-router-dom"; // For redirection
-import { Snackbar, Alert } from "@mui/material"; // For notifications
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { Snackbar, Alert } from "@mui/material"; // Import MUI Snackbar and Alert components
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState(""); // State for user name
-  const [message, setMessage] = useState(""); // State for notification message
-  const [severity, setSeverity] = useState("success"); // Notification type
-  const [open, setOpen] = useState(false); // Snackbar visibility
-  const navigate = useNavigate(); // For navigation
+  const [name, setName] = useState(""); // State for name (used in signup)
+  const [message, setMessage] = useState(""); // State for message display
+  const [severity, setSeverity] = useState("success"); // State for message severity (success, error)
+  const [open, setOpen] = useState(false); // State to control Snackbar visibility
+  const navigate = useNavigate(); // For navigation after successful login/signup
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
 
+  // Handle form submission for login or signup
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (isLogin) {
       // Login logic
       const loginResponse = await fetch("http://localhost:5000/api/login", {
@@ -27,25 +28,26 @@ const LoginPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
-      const loginData = await loginResponse.json();
-
+  
+      const loginData = await loginResponse.json(); // Parse the JSON response
+  
       if (loginResponse.ok) {
         setMessage("Login successful!");
         setSeverity("success");
-
-        // Save user details to localStorage
-        if (loginData.userId) {
-          localStorage.setItem("userId", loginData.userId);
-          localStorage.setItem("userName", loginData.userName || "Guest"); // Assuming API sends back userName
+  
+        // Check if loginData contains the user ID and store it in localStorage
+        if (loginData.id) {
+          localStorage.setItem("userId", loginData.id); // Save the correct user ID
+        } else {
+          console.error("User ID is missing in the response.");
         }
-
+  
         setOpen(true); // Show success notification
         navigate("/account"); // Redirect to the account page
       } else {
-        setMessage(loginData.error);
+        setMessage(loginData.error); // Show error message if login fails
         setSeverity("error");
-        setOpen(true);
+        setOpen(true); // Show error notification
       }
     } else {
       // Signup logic
@@ -54,26 +56,24 @@ const LoginPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
       });
-
+  
       const signupData = await signupResponse.json();
-
+  
       if (signupResponse.ok) {
         setMessage("Account created successfully!");
         setSeverity("success");
-
-        // Save the user's name in localStorage
-        localStorage.setItem("userName", name);
-
         setOpen(true); // Show success notification
-        setIsLogin(true); // Switch to login after signup
+        setIsLogin(true); // Switch to login after successful signup
       } else {
-        setMessage(signupData.error);
+        setMessage(signupData.error); // Show error message if signup fails
         setSeverity("error");
-        setOpen(true);
+        setOpen(true); // Show error notification
       }
     }
   };
+  
 
+  // Handle closing the Snackbar
   const handleCloseSnackbar = () => {
     setOpen(false);
   };
@@ -87,7 +87,7 @@ const LoginPage = () => {
         <form className="login-form" onSubmit={handleSubmit}>
           {!isLogin && (
             <div className="form-group">
-              <label htmlFor="name">User Name:</label>
+              <label htmlFor="name">Name:</label>
               <input
                 type="text"
                 id="name"
@@ -104,44 +104,45 @@ const LoginPage = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
-            </div>
-            <button type="submit" className="form-button">
-              {isLogin ? "Login" : "Create Account"}
-            </button>
-          </form>
+              placeholder="Enter your email"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+            />
+          </div>
+          <button type="submit" className="form-button">
+            {isLogin ? "Login" : "Create Account"}
+          </button>
+        </form>
 
-          <p className="toggle-form-text">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}
-            <span className="toggle-form-link" onClick={toggleForm}>
-              {isLogin ? " Create one" : " Login"}
-            </span>
-          </p>
-        </div>
-
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleCloseSnackbar}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert onClose={handleCloseSnackbar} severity={severity}>
-            {message}
-          </Alert>
-        </Snackbar>
+        <p className="toggle-form-text">
+          {isLogin ? "Don't have an account?" : "Already have an account?"}
+          <span className="toggle-form-link" onClick={toggleForm}>
+            {isLogin ? " Create one" : " Login"}
+          </span>
+        </p>
       </div>
-    );
+
+      {/* MUI Snackbar for notifications */}
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={severity}>
+          {message}
+        </Alert>
+      </Snackbar>
+    </div>
+  );
 };
 
 export default LoginPage;
