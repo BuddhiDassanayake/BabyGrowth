@@ -98,6 +98,38 @@ app.get('/api/profile/:id', (req, res) => {
   });
 });
 
+app.get('/api/users', (req, res) => {
+  const sql = `SELECT id, name, email FROM users`;
+  db.all(sql, [], (err, rows) => {
+      if (err) {
+          res.status(500).send({ error: 'Error retrieving users' });
+      } else {
+          res.status(200).json(rows);
+      }
+  });
+});
+
+// Delete User
+app.delete('/api/delete-user/:id', (req, res) => {
+  const userId = req.params.id;
+  const sql = `DELETE FROM users WHERE id = ?`;
+
+  db.run(sql, [userId], function (err) {
+    if (err) {
+      console.error('Error deleting user:', err.message);
+      return res.status(500).send({ error: 'Failed to delete user.' });
+    }
+
+    if (this.changes === 0) {
+      return res.status(404).send({ error: 'User not found.' });
+    }
+
+    res.status(200).send({ message: 'User deleted successfully.' });
+  });
+});
+
+
+
 // Update User Profile
 app.put('/api/update-profile/:id', (req, res) => {
   const userId = req.params.id;

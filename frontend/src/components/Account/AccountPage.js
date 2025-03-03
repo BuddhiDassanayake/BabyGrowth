@@ -6,6 +6,7 @@ import WeightChart from "../Chart/WeightChart";
 import HeadDiameterChart from "../Chart/HeadDiameterChart";
 import ToothChart from "../Chart/ToothChart";
 
+
 const AccountPage = () => {
   const [userId, setUserId] = useState(null);
 
@@ -24,6 +25,7 @@ const AccountPage = () => {
 
   return (
     <div className="account-page">
+     
       <div className="bgimg">
         {/* Card Carousel */}
         <div className="card-carousel-container">

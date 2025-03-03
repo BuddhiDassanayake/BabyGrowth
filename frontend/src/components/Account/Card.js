@@ -58,51 +58,22 @@ const CardComponent = ({ title, description }) => {
   return (
     <div
       className="card card-large"
-      style={{
-        padding: "20px",
-        margin: "20px",
-        borderRadius: "12px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-        flex: "1",
-        display: "flex",
-        flexDirection: "column",
-      }}
     >
       <div
         className="card-header"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          paddingBottom: "15px",
-          borderBottom: "2px solid #34ccfa",
-        }}
       >
         <div>
-          <h3 style={{ color: "#664254", margin: 0, fontSize: "1.5rem" }}>
+          <h3 className="card-title">
             {title}
           </h3>
-          <p style={{ color: "#664254", margin: 0, fontSize: "1rem" }}>
+          <p className="card-description">
             {description}
           </p>
         </div>
         <button
           className="toggle-button"
           onClick={toggleExpand}
-          style={{
-            backgroundColor: "#34ccfa",
-            color: "#ffffff",
-            padding: "8px 16px",
-            borderRadius: "8px",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "1.2rem",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minWidth: "36px",
-            height: "36px",
-          }}
+          
         >
           {isExpanded ? "-" : "+"}
         </button>
@@ -110,14 +81,9 @@ const CardComponent = ({ title, description }) => {
       {isExpanded && (
         <div
           className="card-body"
-          style={{
-            backgroundColor: "#fef8f8",
-            padding: "20px",
-            borderRadius: "10px",
-            marginTop: "15px",
-          }}
+      
         >
-          <div className="form-group" style={{ marginBottom: "15px" }}>
+          <div className="form-group" >
             <label
               htmlFor="date"
               style={{
@@ -175,12 +141,6 @@ const CardComponent = ({ title, description }) => {
           <div className="form-group" style={{ marginBottom: "15px" }}>
             <label
               htmlFor="specialNotes"
-              style={{
-                color: "#664254",
-                marginBottom: "5px",
-                display: "block",
-                fontWeight: "500",
-              }}
             >
               Special Notes:
             </label>
@@ -190,30 +150,12 @@ const CardComponent = ({ title, description }) => {
               value={formData.specialNotes}
               onChange={handleInputChange}
               placeholder="Enter any additional notes"
-              style={{
-                border: "1px solid #34ccfa",
-                borderRadius: "5px",
-                padding: "10px",
-                width: "100%",
-                resize: "none",
-                fontSize: "1rem",
-                height: "100px",
-              }}
-            ></textarea>
+              ></textarea>
           </div>
           <button
             className="save-button"
             onClick={handleSave}
-            style={{
-              backgroundColor: "#f76fb3",
-              color: "#ffffff",
-              border: "none",
-              borderRadius: "5px",
-              padding: "12px 15px",
-              cursor: "pointer",
-              width: "100%",
-              fontSize: "1.1rem",
-            }}
+       
           >
             Save
           </button>
@@ -222,15 +164,7 @@ const CardComponent = ({ title, description }) => {
       {showMessage && (
         <div
           className="notification"
-          style={{
-            backgroundColor: "#fef8f8",
-            color: "#664254",
-            border: "1px solid #34ccfa",
-            borderRadius: "5px",
-            padding: "10px",
-            marginTop: "10px",
-            textAlign: "center",
-          }}
+        
         >
             {title} measurement saved successfully! ✅
         </div>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import CardCarousel from "../Account/CardCarousel";
+
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [highlightButton, setHighlightButton] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => {//what i want to do as a side effect
     const timer = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0); // Scroll to the top after splash screen
@@ -33,7 +33,7 @@ const HomePage = () => {
     <>
       {isLoading && (
         <div className="splash-screen">
-          <div ><img src="logo2.png" alt="logo"className="splash-logo" /></div>
+          <div ><img src="babydiary.svg" alt="logo"className="splash-logo" /></div>
         </div>
       )}
 
@@ -42,16 +42,22 @@ const HomePage = () => {
         <div className="hero-section">
           <div className="hero-content">
             <div className="hero-text">
-              <h2 className="hero-title"><img src="logo2.png" alt="logo2" className="Logo2"/></h2>
-              <h6 className="hero-subtitle">
+              <h2 className="hero-title"><img src="babydiary.svg" alt="logo2" className="Logo2"/></h2>
+             <div> <h4 className="hero-subtitle1">
+                BabyDiary 
+              </h4>
+              <p className="hero-subtitle2">The diary for you and your baby</p>
+              <p className="hero-subtitle">
                 Track your baby's growth, milestones, and cherish every moment.
-              </h6>
+              </p>
+              
               <button
                 className={`hero-button ${highlightButton ? "highlight" : ""}`}
                 onClick={handleGetStarted}
               >
                 Get Started
               </button>
+            </div>
             </div>
             <div className="hero-image">
               <img src="img1.png" alt="Img Error !" />
@@ -83,16 +89,34 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+       {/* Image After Features Section */}
+<div className="image-after-features">
+  <img src="Babies.svg" alt="Baby Growth Illustration" className="features-image" />
+</div>
       </div>
-
       <div className="image-before-footer">
-        <img
-          src="Babies.svg"
-          alt="Decorative Footer Illustration"
-          className="footer-image"
-        />
-      </div>
-      <CardCarousel />
+  <div className="sub-title-container">
+    <img src="icon-statistics.svg" alt="Statistics Icon" className="static-img" />
+    <h5 className="sub-title1">Statistics</h5>
+  </div>
+  <p className="sub-title2">Height. Weight. Head Circumference.</p>
+  <p className="sub-title3">Add height,weight and head circumference,to see</p><br/><p className="sub-title4"> how your baby develops.</p>
+<img src="staticss.png" alt="ss" className="ss-img"/>
+</div>
+
+
+<div className="sub-title-container2">
+  <img src="icon-milestones.svg" alt="milstone-Icon" className="milstone-Icon"/>
+  <h5 className="sub-topic1">Milestones</h5>
+</div>
+<p className="sub-topic2">and Achievements</p>
+<p className="sub-topic3">Remember important Milestones like the first Tooth or</p><br/><p className="sub-topic4">the first smile and share it with your Friends and</p>
+<br/><p className="sub-topic5">Family.</p>
+<img src="img2.png" alt="img2" className="img2"/>
+
+
+     
+      
       {/* Footer Section */}
       <footer className="footer">
         BabyGrowth 2024 © Developed by Buddhi Dassanayake

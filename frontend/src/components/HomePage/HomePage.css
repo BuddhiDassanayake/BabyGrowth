@@ -1,33 +1,13 @@
+
 *{
   margin: 0;
   padding: 0;
-  overflow-x: 0;
-}
-
-/* Highlight animation for Get Started button */
-@keyframes highlight {
-  0% {
-    box-shadow: 0 0 10px 5px #ffffff;
-  }
-  100% {
-    box-shadow: 0 0 0 0 #ffffff;
-  }
 }
 
 .hero-button.highlight {
   animation: highlight 1s ease-out;
 }
 
-/* Footer Section */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
- 
-  font-size: 1rem;
-  position: relative;
-  width: 100%;
-}
 
 
 /* Splash Screen */
@@ -68,17 +48,7 @@
   }
 }
 
-/* Slide-Up Animation for Splash Screen */
-@keyframes slideUp {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
+
 
 /* Splash Logo */
 .splash-logo {
@@ -90,15 +60,14 @@
   height: auto;
 }
 
-
-
-
 /* Home Page */
 .home-page {
   font-family: "Popins", sans-serif;
-  background-image: 
-    linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0)),
-    url('C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth\frontend\src\img\cloud-back.svg');
+  background-image:
+   linear-gradient(to top, 
+  rgba(255, 255, 255, 0.0) 0%, 
+  rgba(255, 255, 255, 0.0) 50%, 
+  rgba(255, 255, 255, 0.0) 60%),url('C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth\frontend\public\cloud.png');
   background-repeat: no-repeat;
   background-size: cover; 
   background-attachment: fixed;
@@ -109,31 +78,24 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  
-  
-  
-}
+ background-attachment: scroll;
 
-@keyframes slideDown {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
+ 
+   }
+
+
 
 .home-page.visible {
   opacity: 1;
   transform: translateY(0);
+  
 }
 
 .Logo2{
-  width: 500px;
+  width: 250px;
   height: auto;
+  margin-top: 20px;
+  margin-left: 50px;
 }
 /* Hero Section */
 .hero-section {
@@ -141,6 +103,7 @@
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
+
 
   
 }
@@ -152,6 +115,7 @@
   max-width: 1200px;
   width: 100%;
   gap: 30px;
+
  
 }
 
@@ -159,21 +123,41 @@
 .hero-text {
   flex: 1;
   text-align: left;
+ }
+.hero-text div{
+  top:100px ;
+  position: relative;
 }
-
  .hero-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #ffffff;
+  
+
 
  
 }
+.hero-subtitle1{
+  font-size: 3rem;
+  color: #664254;
+  margin-left: 140px;
+ 
+}
 
+.hero-subtitle2{
+  font-size: 1.7rem;
+  color: #664254;
+  margin-top: 10px;
+  margin-left: 60px;
+  
+}
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   line-height: 1.8;
-  color: #333;
+  color: #664254;
+  margin-top: 10px;
+  margin-left: -30px;
   
 }
 
@@ -183,14 +167,21 @@
   border: none;
   padding: 15px 40px;
   font-size: 1.2rem;
+  font-weight: 200;
   cursor: pointer;
   border-radius: 50px;
   transition: background-color 0.3s ease-in-out;
+  margin-left: 160px;
+ margin-bottom: 10px;
+ 
+  
+
 }
+
 .hero-button:hover {
   background-image: linear-gradient(to right, #ff0095, rgb(255, 0, 153)); /* Gradient background */
   color: rgb(255, 255, 255); /* Ensure the text color remains readable */
-  transition: background-image 2s ease-in-out, color 0.3s ease-in-out; /* Smooth transition effects */
+  transition: background-image 2s ease-in-out, color 0.9s ease-in-out; /* Smooth transition effects */
 }
 
 
@@ -218,6 +209,8 @@
   width: 90%;
   max-width: 1200px;
   margin-bottom: 50px;
+ margin-top: 20px;
+  
 }
 
 .features-title {
@@ -258,18 +251,114 @@
   font-size: 1rem;
   color: #555;
 }
-
-
 .image-before-footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 10px 0; /* Space around the image */
+  margin-left: -200px;
+ 
+}
+.static-img{
+ 
+  margin-left: 400px;
+
+}
+.sub-title-container{
+  margin-left: 10%;
+}
+.sub-title1{
+  gap: 10px;
+  font-size: 2rem;
+  color: #664254;
+  margin-left: 390px;
+}
+.sub-title2{
+  font-size: 1.5rem;
+  color: #664254;
+  margin-top: 150px;
+  margin-left: -240px;
+}
+.sub-title3{
+  font-size: 1.1rem;
+  color: #664254;
+  margin-top: 190px;
+  margin-left: -400px;
+  font-weight: 0;
+}
+
+.sub-title4{
+  font-size: 1.1rem;
+  margin-top: 215px;
+  margin-left: -310px;
+  color: #664254;
+}
+
+.ss-img{
+  height: 450px;
+  width: auto;
+  margin-left: 200px;
+  margin-top: -50px;
+}
+
+.image-before-footer2 {
+  display: flex;
+  margin: 10px 0; /* Space around the image */
+  
+ 
+}
+
+.milstone-Icon{
+margin-left: 900px;
+margin-top: 60px;
+}
+.sub-topic1{
+  gap: 10px;
+  font-size: 2rem;
+  color: #664254;
+  margin-left: 870px;
+  
+  
+}
+.sub-topic2{
+  font-size: 1.5rem;
+  color: #664254;
+  margin-top: 5px;
+  margin-left: 850px;
+
+}
+.sub-topic3{
+  font-size: 1.1rem;
+  color: #664254;
+  margin-top: 12px;
+   margin-left: 750px;
+  font-weight: 0;
+}
+
+.sub-topic4{
+  font-size: 1.1rem;
+  margin-left: 780px;
+  color: #664254;
+  margin-top: -15px;
+}
+.sub-topic5{
+  font-size: 1.1rem;
+  margin-left: 930px;
+  color: #664254;
+  margin-top: -15px;
+}
+.img2{
+  height: 450px;
+  width: auto;
+  margin-left: 190px;
+  margin-top: -300px;
+  
+
+
 }
 
 .footer-image {
   max-width: 50%;
   height: auto;
+  
 }
 
 .footer {
@@ -278,5 +367,10 @@
   padding: 20px 10px;
   font-size: 1rem;
   color: #343637;
-
+  position: relative;
+  width: 100%;
 }
+
+
+
+
