@@ -1,37 +1,55 @@
-
-.carousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 123, 255, 0.6);
-  border-radius: 10px;
-}
-
-.carousel::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 123, 255, 0.8);
+.container {
+  display: flex;
+  height: 100vh;
 
 }
 
-.carousel::-webkit-scrollbar-track {
-  background-color: #ff75aa;
+.slidebar {
+  width: 450px;
+  height: auto;
+  background-color:pink ;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.charts h2{
+  font-size: 2rem;
+  color:#664254;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.charts{
+  margin-left: 450px;
  
+
+  
+}
+.charts-container {
+  display: flex;
+  justify-content:space-between;
+  gap: 20px;
+  padding: 20px;
+ 
+
 }
 
 
-/* CardCarousel.css */
-.carousel {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 20px;
-padding: 10px;
-padding-top: 50px;
-justify-content: center;
-}
+@media (max-width: 768px) {
+  .chart-card {
+    width: 100%; /* Adjusts the width for smaller screens */
+  }
 
-.carousel .card {
-display: flex;
-flex-direction: column;
-align-items: stretch;
-
+  .chart-content {
+    height: 200px; /* Adjust the height for smaller screens */
+  }
+ 
+  /* You can add any specific changes for the measurements you want here */
 }

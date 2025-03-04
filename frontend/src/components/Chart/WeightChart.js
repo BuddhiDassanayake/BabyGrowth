@@ -67,11 +67,11 @@ const WeightChart = ({ userId }) => {
         },
         plugins: {
           legend: { position: "top" },
-          title: { display: true, text: "Height Chart" },
+          title: { display: true, text: "Weight Chart" },
         },
         scales: {
           x: { title: { display: true, text: "Date" } },
-          y: { title: { display: true, text: "Height (cm)" } },
+          y: { title: { display: true, text: "Weight (cm)" } },
         },
       },
     });

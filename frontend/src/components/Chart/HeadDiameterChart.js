@@ -14,9 +14,12 @@ const HeadDiameterChart = ({ userId }) => {
         const response = await axios.get(`http://localhost:5000/api/measurements/${userId}`);
         const measurements = response.data;
 
+        console.log(response.data);
+
         // Filter and sort data
         const filteredData = measurements
-          .filter((item) => item.type === "Add Head Diameter")
+          .filter((item) => item.type === "Head Diameter")
+          
           .sort((a, b) => new Date(a.date) - new Date(b.date));
 
         setHeadDiameterData(filteredData);

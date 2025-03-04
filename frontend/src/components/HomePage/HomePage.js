@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import Footer from "./Footer/FooterQ";
 
 
 const HomePage = () => {
@@ -50,13 +51,14 @@ const HomePage = () => {
               <p className="hero-subtitle">
                 Track your baby's growth, milestones, and cherish every moment.
               </p>
-              
+           
               <button
                 className={`hero-button ${highlightButton ? "highlight" : ""}`}
                 onClick={handleGetStarted}
               >
                 Get Started
               </button>
+            
             </div>
             </div>
             <div className="hero-image">
@@ -64,6 +66,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
 
         {/* Features Section */}
         <div className="features-section">
@@ -104,21 +107,31 @@ const HomePage = () => {
 <img src="staticss.png" alt="ss" className="ss-img"/>
 </div>
 
-
+<div className="image-before-footer1">
 <div className="sub-title-container2">
   <img src="icon-milestones.svg" alt="milstone-Icon" className="milstone-Icon"/>
   <h5 className="sub-topic1">Milestones</h5>
-</div>
+
 <p className="sub-topic2">and Achievements</p>
 <p className="sub-topic3">Remember important Milestones like the first Tooth or</p><br/><p className="sub-topic4">the first smile and share it with your Friends and</p>
 <br/><p className="sub-topic5">Family.</p>
 <img src="img2.png" alt="img2" className="img2"/>
+</div>
+</div>
 
+  <>
+    {/* Other homepage content */}
+    
+    <Footer /> {/* This will display the footer at the bottom */}
+  </>
 
-     
-      
+  
+
       {/* Footer Section */}
       <footer className="footer">
+      <div className="apple-img">
+          <img src="badge-appstore.svg" alt="apple-img" className="apple-img"></img>
+        </div>
         BabyGrowth 2024 © Developed by Buddhi Dassanayake
       </footer>
     </>

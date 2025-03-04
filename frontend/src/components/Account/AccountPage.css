@@ -1,27 +1,45 @@
 
-.bgimg {
+
+  .bgimg {
   position: relative;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f9f3f3, #fdfdfd);
-  background-image:url('C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth\frontend\src\img\cloud-back.svg'); ;
-  font-family: "Arial", sans-serif;
-  overflow: hidden;
+  flex: 1;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
-  flex-direction: column;  /* Ensures the content is aligned vertically */
+  }
+
+.account-page {
+  min-height: 100vh; /* Ensures it takes up at least the full viewport height */
+  /* Background color only for Account Page */
+  display: flex;
+  flex-direction: column;
 }
 
-.card-carousel-container {
-  margin-bottom: 40px; /* Adds space between the card carousel and the height chart */
+.account-page {
+  min-height: 100vh; /* Ensures at least full viewport height */
+  height: 100%; /* Allows it to expand with content */
+  background: #ffffff; /* Background color applied to full page */
+  display: flex;
+  flex-direction: column;
 }
 
-.height-chart-container {
-  margin-top: 20px;  /* Adds space above the chart */
-  width: 100%;  /* Adjust width to fit */
-  max-width: 1000px;  /* Maximum width for the chart */
+/* Make sure the body and root container inherit the background */
+.account-container {
+  flex: 1; /* Allows content to take up space */
+  width: 100%;
+  background: #ffcccb; /* Inherit background */
 }
+
+/* Apply background to the entire page while scrolling */
+
+
+
+
+
+
+
+

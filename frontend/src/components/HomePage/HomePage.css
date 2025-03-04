@@ -78,7 +78,7 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
- background-attachment: scroll;
+  background-attachment: scroll;
 
  
    }
@@ -172,7 +172,10 @@
   border-radius: 50px;
   transition: background-color 0.3s ease-in-out;
   margin-left: 160px;
- margin-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: -50px;
+
+ 
  
   
 
@@ -209,7 +212,7 @@
   width: 90%;
   max-width: 1200px;
   margin-bottom: 50px;
- margin-top: 20px;
+ margin-top: 40px;
   
 }
 
@@ -224,6 +227,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 30px;
+ 
 }
 
 .feature-box {
@@ -234,6 +238,7 @@
   width: 300px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
 }
 
 .feature-box:hover {
@@ -264,6 +269,7 @@
 }
 .sub-title-container{
   margin-left: 10%;
+  margin-top: 10px;
 }
 .sub-title1{
   gap: 10px;
@@ -302,6 +308,7 @@
 .image-before-footer2 {
   display: flex;
   margin: 10px 0; /* Space around the image */
+  margin-top: 20px;
   
  
 }
@@ -360,15 +367,23 @@ margin-top: 60px;
   height: auto;
   
 }
+.footer .apple-img{
+margin-top: -20px;
+margin-bottom: 10px;
+width: 150px;
+height: auto;
+margin-left: 350px;
+}
 
 .footer {
-  background-color: #b7b7b7;
+  background-color: #ffcccb;
   text-align: center;
   padding: 20px 10px;
   font-size: 1rem;
   color: #343637;
   position: relative;
   width: 100%;
+  
 }
 
 

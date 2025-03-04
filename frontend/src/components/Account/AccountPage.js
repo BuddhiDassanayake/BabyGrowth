@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CardCarousel from "../Account/CardCarousel";
 import "../Account/AccountPage.css";
-import HeightChart from "../Chart/HeightChart";
-import WeightChart from "../Chart/WeightChart";
-import HeadDiameterChart from "../Chart/HeadDiameterChart";
-import ToothChart from "../Chart/ToothChart";
+
+
 
 
 const AccountPage = () => {
@@ -32,30 +30,11 @@ const AccountPage = () => {
           <CardCarousel />
         </div>
 
-        {/* Height Chart */}
-        <div className="height-chart-container">
-          {/* Pass the userId to the HeightChart component */}
-          <HeightChart userId={userId} />
-        </div>
+        
 
-        <div className="weight-chart-container">
-          {/* Pass the userId to the HeightChart component */}
-          <WeightChart userId={userId} />
-        </div>
-
-        <div className="head-diameter-chart-container">
-          {/* Pass the userId to the HeightChart component */}
-          <HeadDiameterChart userId={userId} />
-        </div>
-
-        <div className="tooth-chart-container">
-          {/* Pass the userId to the HeightChart component */}
-          <ToothChart userId={userId} />
-        </div>
+       
       </div>
-      <footer className="footer">
-    BabyGrowth 2024 © Developed by Buddhi Dassanayake
-  </footer>
+     
   
     </div>
    
