@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import CardComponent from "../Account/Card";
-import HeightChart from "../Chart/HeightChart";
-import WeightChart from "../Chart/WeightChart";
-import HeadDiameterChart from "../Chart/HeadDiameterChart";
+
 import "./CardCarousel.css";
 
 const cardsData = [
+  {
+    title: "Head Diameter",
+    description: "Keep track of the baby's head circumference.",
+  },
   {
     title: "Add Weight",
     description: "Track and log the baby's weight over time.",
@@ -14,10 +16,7 @@ const cardsData = [
     title: "Add Height",
     description: "Monitor and record the baby's height growth.",
   },
-  {
-    title: "Head Diameter",
-    description: "Keep track of the baby's head circumference.",
-  },
+  
 ];
 
 const CardCarousel = () => {
@@ -42,6 +41,7 @@ const CardCarousel = () => {
   return (
     <div className="container">
       <div className="sidebar slidebar">
+      <img src="babyGrowth.png" alt="Logoo" className="Logoo"/>
         {cardsData.map((card, index) => (
           <div key={index} onClick={() => handleCardClick(index)}>
             <CardComponent
@@ -52,14 +52,7 @@ const CardCarousel = () => {
           </div>
         ))}
       </div>
-      <div className="charts">
-        <h2>Growth Charts</h2>
-        <div className="chart-container">
-          <HeightChart userId={userId} />
-          <WeightChart userId={userId} />
-          <HeadDiameterChart userId={userId} />
-        </div>
-      </div>
+     
     </div>
   );
 };

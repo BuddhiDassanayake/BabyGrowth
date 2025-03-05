@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CardCarousel from "../Account/CardCarousel";
 import "../Account/AccountPage.css";
-
+import HeightChart from "../Chart/HeightChart";
+import WeightChart from "../Chart/WeightChart";
+import HeadDiameterChart from "../Chart/HeadDiameterChart";
 
 
 
@@ -29,7 +31,18 @@ const AccountPage = () => {
         <div className="card-carousel-container">
           <CardCarousel />
         </div>
+        <div className="charts">
+        <h2>Growth Charts</h2>
+        <p className="description-baby">Track your baby’s growth with adorable charts, making every tiny change a big milestone!</p>
+        <div className="chart-container">
+        <HeadDiameterChart userId={userId} />
+          <WeightChart userId={userId} />
+          <HeightChart userId={userId} />
+          
+        </div>
+      </div>
 
+      
         
 
        

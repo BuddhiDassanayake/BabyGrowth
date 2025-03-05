@@ -34,7 +34,7 @@ const HomePage = () => {
     <>
       {isLoading && (
         <div className="splash-screen">
-          <div ><img src="babydiary.svg" alt="logo"className="splash-logo" /></div>
+          <div ><img src="babyGrowth.png" alt="logo"className="splash-logo" /></div>
         </div>
       )}
 
@@ -43,9 +43,9 @@ const HomePage = () => {
         <div className="hero-section">
           <div className="hero-content">
             <div className="hero-text">
-              <h2 className="hero-title"><img src="babydiary.svg" alt="logo2" className="Logo2"/></h2>
+              <h2 className="hero-title"><img src="babyGrowth.png" alt="logo2" className="Logo2"/></h2>
              <div> <h4 className="hero-subtitle1">
-                BabyDiary 
+                BabyGrowth 
               </h4>
               <p className="hero-subtitle2">The diary for you and your baby</p>
               <p className="hero-subtitle">
@@ -70,7 +70,7 @@ const HomePage = () => {
 
         {/* Features Section */}
         <div className="features-section">
-          <h4 className="features-title">Why Choose Baby Diary?</h4>
+          <h4 className="features-title">Why Choose Baby Growth?</h4>
           <div className="features-grid">
             <div className="feature-box">
               <h6 className="feature-title">📈 Growth Tracking</h6>

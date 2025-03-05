@@ -67,9 +67,9 @@
    linear-gradient(to top, 
   rgba(255, 255, 255, 0.0) 0%, 
   rgba(255, 255, 255, 0.0) 50%, 
-  rgba(255, 255, 255, 0.0) 60%),url('C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth\frontend\public\cloud.png');
+  rgba(255, 255, 255, 0.0) 60%),url('C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth\frontend\src\img\path4.svg');
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size:100%; 
   background-attachment: fixed;
   background-position: center 0%;
   min-height: 100vh;
@@ -79,6 +79,8 @@
   align-items: center;
   opacity: 0;
   background-attachment: scroll;
+  
+  
 
  
    }
@@ -95,7 +97,7 @@
   width: 250px;
   height: auto;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 120px;
 }
 /* Hero Section */
 .hero-section {
@@ -140,7 +142,8 @@
 .hero-subtitle1{
   font-size: 3rem;
   color: #664254;
-  margin-left: 140px;
+  margin-left: 130px;
+  margin-top: 50px;
  
 }
 
@@ -162,7 +165,7 @@
 }
 
 .hero-button {
-  background-color: #109bc6;
+  background-color: #1cb0ff;
   color: white;
   border: none;
   padding: 15px 40px;
@@ -174,6 +177,7 @@
   margin-left: 160px;
   margin-bottom: 10px;
   margin-top: -50px;
+  font-weight: 600;
 
  
  
@@ -182,7 +186,7 @@
 }
 
 .hero-button:hover {
-  background-image: linear-gradient(to right, #ff0095, rgb(255, 0, 153)); /* Gradient background */
+  background-image: linear-gradient(to right, #ff5999, #ff2a7c); /* Gradient background */
   color: rgb(255, 255, 255); /* Ensure the text color remains readable */
   transition: background-image 2s ease-in-out, color 0.9s ease-in-out; /* Smooth transition effects */
 }

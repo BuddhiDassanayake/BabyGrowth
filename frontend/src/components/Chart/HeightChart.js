@@ -14,12 +14,20 @@ const HeightChart = ({ userId }) => {
         const response = await axios.get(`http://localhost:5000/api/measurements/${userId}`);
         const measurements = response.data;
 
-        // Filter and sort data
-        const filteredData = measurements
+        // Grouping measurements by date and keeping the last measurement
+        const groupedData = measurements
           .filter((item) => item.type === "Add Height")
+          .reduce((acc, item) => {
+            const dateKey = new Date(item.date).toISOString().split('T')[0]; // Keep consistent date format
+            acc[dateKey] = item; // Keep only the last measurement for each date
+            return acc;
+          }, {});
+
+        // Convert grouped data to an array and sort by date
+        const aggregatedData = Object.values(groupedData)
           .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        setHeightData(filteredData);
+        setHeightData(aggregatedData);
       } catch (error) {
         console.error("Error fetching measurements:", error);
       }

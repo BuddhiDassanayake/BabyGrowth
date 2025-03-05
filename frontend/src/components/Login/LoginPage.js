@@ -80,8 +80,10 @@ const LoginPage = () => {
 
   return (
     <div className="login-page">
+       <h2 className="heroo"><img src="babyGrowth.png" alt="Logooo" className="Logooo"/></h2>
       <div className="login-card">
         <h2 className="login-title">
+       
           {isLogin ? "Login to Baby Diary" : "Create Your Account"}
         </h2>
         <form className="login-form" onSubmit={handleSubmit}>
@@ -95,6 +97,7 @@ const LoginPage = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
               />
+      
             </div>
           )}
           <div className="form-group">
@@ -128,6 +131,7 @@ const LoginPage = () => {
             {isLogin ? " Create one" : " Login"}
           </span>
         </p>
+       
       </div>
 
       {/* MUI Snackbar for notifications */}
@@ -141,8 +145,14 @@ const LoginPage = () => {
           {message}
         </Alert>
       </Snackbar>
+      
     </div>
+   
+ 
+
+    
   );
+  
 };
 
 export default LoginPage;

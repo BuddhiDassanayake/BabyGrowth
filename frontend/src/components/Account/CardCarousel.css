@@ -7,7 +7,7 @@
 .slidebar {
   width: 450px;
   height: auto;
-  background-color:pink ;
+ background-color: aliceblue;
   padding: 20px;
   overflow-y: auto;
   height: 100vh;
@@ -16,30 +16,11 @@
   top: 0;
   transition: transform 0.3s ease-in-out;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-  
+  -ms-overflow-style: none; /* IE hides scrollbar */
+  scrollbar-width: none; /* Firefox hides scrollbar */
 }
 
-.charts h2{
-  font-size: 2rem;
-  color:#664254;
-  margin-left: 200px;
-  margin-top: 20px;
-}
 
-.charts{
-  margin-left: 450px;
- 
-
-  
-}
-.charts-container {
-  display: flex;
-  justify-content:space-between;
-  gap: 20px;
-  padding: 20px;
- 
-
-}
 
 
 @media (max-width: 768px) {
@@ -52,4 +33,13 @@
   }
  
   /* You can add any specific changes for the measurements you want here */
+}
+
+.Logoo{
+  width: 180px;
+  height: auto;
+  margin-right: 100px;
+ margin-bottom: 5px;
+  
+  
 }

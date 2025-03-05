@@ -4,8 +4,8 @@ import Chart from "chart.js/auto";
 import './HeadDiameterChart.css';
 
 const HeadDiameterChart = ({ userId }) => {
-  const chartRef = useRef(null); // Canvas reference
-  const chartInstanceRef = useRef(null); // Store chart instance
+  const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
   const [headDiameterData, setHeadDiameterData] = useState([]);
 
   useEffect(() => {
@@ -16,37 +16,41 @@ const HeadDiameterChart = ({ userId }) => {
 
         console.log(response.data);
 
-        // Filter and sort data
-        const filteredData = measurements
+        // Grouping measurements by date and keeping the last measurement
+        const groupedData = measurements
           .filter((item) => item.type === "Head Diameter")
-          
+          .reduce((acc, item) => {
+            const dateKey = new Date(item.date).toISOString().split('T')[0]; // Keep consistent date format
+            acc[dateKey] = item; // Keep only the last measurement for each date
+            return acc;
+          }, {});
+
+        // Convert grouped data to an array and sort by date
+        const aggregatedData = Object.values(groupedData)
           .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        setHeadDiameterData(filteredData);
+        setHeadDiameterData(aggregatedData);
       } catch (error) {
         console.error("Error fetching measurements:", error);
       }
     };
 
     fetchData();
-  }, [userId]); // Runs when userId changes
+  }, [userId]);
 
   useEffect(() => {
     if (headDiameterData.length === 0 || !chartRef.current) return;
 
     const ctx = chartRef.current.getContext("2d");
 
-    // Destroy existing chart before creating a new one
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Create gradient
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, "rgba(206, 132, 216, 0.5)");
     gradient.addColorStop(1, "rgba(136, 132, 216, 0)");
 
-    // Create new chart
     chartInstanceRef.current = new Chart(ctx, {
       type: "line",
       data: {
@@ -79,14 +83,13 @@ const HeadDiameterChart = ({ userId }) => {
       },
     });
 
-    // Cleanup function
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
         chartInstanceRef.current = null;
       }
     };
-  }, [headDiameterData]); // Runs when headDiameterData changes
+  }, [headDiameterData]);
 
   return (
     <div className="headdiametercard">
