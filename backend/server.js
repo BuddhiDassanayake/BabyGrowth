@@ -189,6 +189,72 @@ app.get('/api/measurements/:user_id', (req, res) => {
   });
 });
 
+// DELETE Measurement Data with 'id', 'date', and 'type' match
+app.delete('/api/measurements/:id', (req, res) => {
+  const { id } = req.params;
+  const { date, type } = req.body;  // Ensure date and type are sent in the request body
+
+  if (!date || !type) {
+    return res.status(400).send({ error: 'Date and type are required to delete the measurement.' });
+  }
+
+  // SQL query to match the measurement by id, date, and type
+  const sql = `DELETE FROM measurements WHERE id = ? AND date = ? AND type = ?`;
+
+  db.run(sql, [id, date, type], function (err) {
+    if (err) {
+      console.error('Error deleting measurement:', err.message);
+      res.status(500).send({ error: 'Error deleting measurement.' });
+    } else {
+      if (this.changes === 0) {
+        return res.status(404).send({ error: 'Measurement not found with matching criteria.' });
+      }
+      res.status(200).send({ message: 'Measurement deleted successfully.' });
+    }
+  });
+});
+
+
+
+
+
+app.put('/api/measurements/:id', (req, res) => {
+  const { id } = req.params;
+  const { new_measurement,date, type } = req.body;  // Ensure date and type are sent in the request body
+
+  if (!date || !type) {
+    return res.status(400).send({ error: 'Date and type are required to delete the measurement.' });
+  }
+
+
+const sql = `UPDATE  measurements SET measurement = ? WHERE id = ? AND date = ? AND type = ?`;
+
+
+console.log(sql, [new_measurement,id, date, type]);
+db.run(sql, [new_measurement,id, date, type], function (err) {
+  if (err) {
+    console.error('Error updating measurement:', err.message);
+    res.status(500).send({ error: 'Error updating measurement.' });
+  } else {
+    if (this.changes === 0) {
+      return res.status(404).send({ error: 'Measurement not found with matching criteria.' });
+    }
+    res.status(200).send({ message: 'Measurement updated successfully.' });
+  }
+});
+
+})
+
+
+
+
+
+
+
+
+
+
+
 // ==================== Server Listener ====================
 app.listen(port, 'localhost', () => {
   console.log(`Server is running at http://localhost:${port}`);
