@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CardComponent from "../Account/Card";
 
 import "./CardCarousel.css";
@@ -16,12 +17,13 @@ const cardsData = [
     title: "Add Height",
     description: "Monitor and record the baby's height growth.",
   },
-  
 ];
 
 const CardCarousel = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [userId, setUserId] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
@@ -34,6 +36,11 @@ const CardCarousel = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+    navigate("/");
+  };
+
   if (userId === null) {
     return <div>Loading...</div>;
   }
@@ -41,7 +48,13 @@ const CardCarousel = () => {
   return (
     <div className="container">
       <div className="sidebar slidebar">
-      <img src="babyGrowth.png" alt="Logoo" className="Logoo"/>
+        <img src="babyGrowth.png" alt="Logoo" className="Logoo" />
+
+        {/* Logout Button */}
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
+
         {cardsData.map((card, index) => (
           <div key={index} onClick={() => handleCardClick(index)}>
             <CardComponent
@@ -52,7 +65,6 @@ const CardCarousel = () => {
           </div>
         ))}
       </div>
-     
     </div>
   );
 };

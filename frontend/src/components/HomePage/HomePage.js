@@ -9,16 +9,16 @@ const HomePage = () => {
   const [highlightButton, setHighlightButton] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {//what i want to do as a side effect
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-      window.scrollTo(0, 0); // Scroll to the top after splash screen
-      setHighlightButton(true); // Highlight the button
-    }, 2000); // 2 seconds splash screen
+      window.scrollTo(0, 0); 
+      setHighlightButton(true); 
+    }, 2000); 
 
     const highlightTimer = setTimeout(() => {
-      setHighlightButton(false); // Remove highlight after animation
-    }, 3000); // Highlight duration
+      setHighlightButton(false); 
+    }, 3000); 
 
     return () => {
       clearTimeout(timer);
@@ -27,7 +27,7 @@ const HomePage = () => {
   }, []);
 
   const handleGetStarted = () => {
-    navigate("/login"); // Navigate to the Login page
+    navigate("/login");
   };
 
   return (
@@ -120,9 +120,9 @@ const HomePage = () => {
 </div>
 
   <>
-    {/* Other homepage content */}
     
-    <Footer /> {/* This will display the footer at the bottom */}
+    
+    <Footer /> 
   </>
 
   

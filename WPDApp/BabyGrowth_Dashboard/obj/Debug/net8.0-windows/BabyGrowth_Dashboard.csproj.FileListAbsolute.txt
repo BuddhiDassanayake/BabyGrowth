@@ -1,0 +1,44 @@
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.exe
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.dll
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.deps.json
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.runtimeconfig.json
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.pdb
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.AssemblyReference.cache
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form1.resources
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form2.resources
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Properties.Resources.resources
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.GenerateResource.cache
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrow.E26477BC.Up2Date
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.dll
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\refint\BabyGrowth_Dashboard.dll
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.pdb
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.genruntimeconfig.cache
+C:\Users\LENOVO\source\repos\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\ref\BabyGrowth_Dashboard.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\refint\BabyGrowth_Dashboard.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.pdb
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.exe
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.deps.json
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.runtimeconfig.json
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\BabyGrowth_Dashboard.pdb
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.AssemblyReference.cache
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form1.resources
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form2.resources
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Properties.Resources.resources
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.GenerateResource.cache
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.AssemblyInfoInputs.cache
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.AssemblyInfo.cs
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrow.E26477BC.Up2Date
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.genruntimeconfig.cache
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\ref\BabyGrowth_Dashboard.dll
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form3.resources
+C:\Users\buddh\Desktop\GUI Project With Git\BabyGrowth_Dashboard\BabyGrowth_Dashboard\BabyGrowth_Dashboard\obj\Debug\net8.0-windows\BabyGrowth_Dashboard.Form4.resources

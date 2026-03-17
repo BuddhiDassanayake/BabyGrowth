@@ -14,11 +14,11 @@ const AccountPage = () => {
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
     if (storedUserId) {
-      setUserId(parseInt(storedUserId, 10));  // Parse to integer
+      setUserId(parseInt(storedUserId, 10));
     }
   }, []);
 
-  // Return loading state if userId is not yet set
+  
   if (userId === null) {
     return <div>Loading...</div>;
   }

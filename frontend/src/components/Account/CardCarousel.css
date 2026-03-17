@@ -20,7 +20,17 @@
   scrollbar-width: none; /* Firefox hides scrollbar */
 }
 
-
+.logout-btn {
+  margin: 10px;
+  padding: 10px;
+  background-color: #1cb0ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 120px;
+  margin-top: 100px;
+}
 
 
 @media (max-width: 768px) {

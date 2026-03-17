@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useNavigate } from "react-router-dom"; 
 import { Snackbar, Alert } from "@mui/material"; // Import MUI Snackbar and Alert components
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState(""); // State for name (used in signup)
-  const [message, setMessage] = useState(""); // State for message display
-  const [severity, setSeverity] = useState("success"); // State for message severity (success, error)
-  const [open, setOpen] = useState(false); // State to control Snackbar visibility
-  const navigate = useNavigate(); // For navigation after successful login/signup
+  const [name, setName] = useState(""); 
+  const [message, setMessage] = useState(""); 
+  const [severity, setSeverity] = useState("success"); 
+  const [open, setOpen] = useState(false); 
+  const navigate = useNavigate(); 
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
@@ -22,7 +22,7 @@ const LoginPage = () => {
     e.preventDefault();
   
     if (isLogin) {
-      // Login logic
+      
       const loginResponse = await fetch("http://localhost:5000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

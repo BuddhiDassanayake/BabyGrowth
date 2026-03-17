@@ -15,31 +15,30 @@
   }
 
 .account-page {
-  min-height: 100vh; /* Ensures it takes up at least the full viewport height */
-  /* Background color only for Account Page */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
 }
 
 .account-page {
-  min-height: 100vh; /* Ensures at least full viewport height */
-  height: 100%; /* Allows it to expand with content */
-  background: #ffffff; /* Background color applied to full page */
+  min-height: 100vh; 
+  height: 100%; 
+  background: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
-/* Make sure the body and root container inherit the background */
+
 .account-container {
-  flex: 1; /* Allows content to take up space */
+  flex: 1; 
   width: 100%;
-  background: #ffcccb; /* Inherit background */
+  background: #ffcccb; 
 }
 .description-baby{
   margin-top: 20px;
   color: #664254;
 }
-/* Apply background to the entire page while scrolling */
+
 
 .charts h2{
   font-size: 2rem;
