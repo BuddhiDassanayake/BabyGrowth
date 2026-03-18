@@ -30,14 +30,9 @@ A **web application** to monitor and track your baby's growth—weight, height, 
 ![Growth Charts](./screenshots/growth-charts.png)
 
 
-
-🖥️ Desktop Application Screenshots (WPF)
-Admin Dashboard
-![alt text](./screenshots/admin-dashboard.png)
-Data Management
-![alt text](./screenshots/admin-data-management.png)
-
 ---
+
+
 ## 🖥️ Desktop Application Screenshots (WPF)
 
 ### Admin Dashboard
@@ -45,6 +40,7 @@ Data Management
 
 ### Data Management
 ![Data Management](./screenshots/Data Management.png)
+
 
 ---
 
