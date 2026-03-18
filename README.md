@@ -7,16 +7,17 @@
 
 A **web application** to monitor and track your baby's growth—weight, height, and head circumference—over time. Designed for parents and caregivers to log and visualize growth patterns easily.
 
----
-
 ## 🚀 Features
 
-- **Growth Tracking**: Log and monitor your baby's weight, height, and head circumference over time.  
-- **Interactive Charts** 📊: Dynamic graphs to visualize growth trends.  
-- **Milestone Tracker** 🍼: Track developmental milestones with reminders.  
-- **Vaccination Log** 💉: Schedule and track immunizations.  
-- **Secure Data Storage** 🔒: Data is securely stored using SQLite with robust CRUD operations.  
-- **Responsive Design** 🌐: Works perfectly on desktops, tablets, and mobile devices.
+| Feature | Description |
+| :--- | :--- |
+| **Growth Tracking** 🌱 | Log and monitor your baby's weight, height, and head circumference over time. |
+| **Interactive Charts** 📊 | Dynamic graphs to visualize growth trends. |
+| **Milestone Tracker** 🍼 | Track developmental milestones with reminders. |
+| **Vaccination Log** 💉 | Schedule and track immunizations. |
+| **Admin Management** 🖥️ | Dedicated WPF desktop interface for secure administrative tasks and data control. |
+| **Secure Data Storage** 🔒 | Data is securely stored using SQLite with robust CRUD operations. |
+| **Responsive Design** 🌐 | Web dashboard works perfectly on desktops, tablets, and mobile devices. |
 
 ---
 
@@ -30,7 +31,7 @@ A **web application** to monitor and track your baby's growth—weight, height, 
 
 
 
-> Replace these screenshots with actual images from your web app inside a `screenshots` folder.
+
 
 ---
 
