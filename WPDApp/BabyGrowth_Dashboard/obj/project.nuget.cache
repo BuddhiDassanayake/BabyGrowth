@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i1pRE622X1E=",
+  "dgSpecHash": "3zOVrAGUWJ4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
+  "projectFilePath": "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\buddh\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\buddh\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

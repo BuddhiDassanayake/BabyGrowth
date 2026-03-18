@@ -1,58 +1,52 @@
-# 👶 BabyGrowth 
+# Baby Growth Tracker 🌱
 
-**Your Ultimate Baby Growth and Milestone Tracker App!**  
-BabyGrowth is a user-friendly web application designed to help moms (and dads!) track their child’s growth, milestones, vaccination schedules, and more. 🌟  
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
+[![React](https://img.shields.io/badge/React-17.0.2-blue)](https://reactjs.org/)  
+[![Node.js](https://img.shields.io/badge/Node.js-18.0-green)](https://nodejs.org/)  
+[![SQLite](https://img.shields.io/badge/SQLite-3.39-orange)](https://www.sqlite.org/)  
 
----
-
-## 🌟 Features Overview
-
-| **Feature**             | **Description**                                                                                |
-|-------------------------|------------------------------------------------------------------------------------------------|
-| 🍼 **Growth Tracking**   | Log your child's height, weight, and head circumference over time.                            |
-| 📅 **Milestone Tracker** | Stay informed about key developmental milestones and when your baby achieves them.            |
-| 💉 **Vaccination Log**   | Keep track of your child’s immunization schedule with timely reminders.                        |
-| 📊 **Charts & Reports**  | Visualize growth patterns with dynamic and easy-to-read charts.                               |
-| 🔔 **Notifications**     | Get reminders for upcoming vaccinations or missed milestones.                                 |
-| 🗂️ **Data Backup**        | Securely store and backup all data, ensuring you never lose important information.           |
+A **web application** to monitor and track your baby's growth—weight, height, and head circumference—over time. Designed for parents and caregivers to log and visualize growth patterns easily.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Features
 
-| **Technology**    | **Purpose**                                   |
-|-------------------|-----------------------------------------------|
-| 🌐 **React.js**    | Frontend development for an interactive UI.  |
-| 🔙 **Node.js**     | Backend API for handling business logic.     |
-| 🛢️ **SQL**     | Database for storing user and child growing pattern.    |
-
+- **Growth Tracking**: Log and monitor your baby's weight, height, and head circumference over time.  
+- **Interactive Charts** 📊: Dynamic graphs to visualize growth trends.  
+- **Milestone Tracker** 🍼: Track developmental milestones with reminders.  
+- **Vaccination Log** 💉: Schedule and track immunizations.  
+- **Secure Data Storage** 🔒: Data is securely stored using SQLite with robust CRUD operations.  
+- **Responsive Design** 🌐: Works perfectly on desktops, tablets, and mobile devices.
 
 ---
 
-## 🚀 Installation & Setup  
+## 💻 Web Application Screenshots
 
-Follow these steps to set up the BabyGrowth app locally:  
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-### Prerequisites  
-- [Node.js](https://nodejs.org/)  
-- [SQL](https://www.mysql.com/downloads)
+### Growth Charts
+![Growth Charts](./screenshots/growth-charts.png)
 
-### Installation  
 
+
+> Replace these screenshots with actual images from your web app inside a `screenshots` folder.
+
+---
+
+## 🛠️ Technologies Used
+
+| Frontend | Backend | Database |
+|----------|---------|---------|
+| React.js | Node.js | SQLite |
+| HTML5 & CSS3 | Express.js | Local DB Storage |
+| Chart.js | REST API | Data Management |
+
+---
+
+## ⚡ Installation & Setup
+
+1. **Clone the repository**
 ```bash
-# Clone the repository
-git clone [https://github.com/yourusername/BabyGrowth.git]
-
-# Navigate to the project folder
-cd BabyGrowth
-
-# Install dependencies for both frontend and backend
-npm install
-
-# Start the development server
-npm start
-
----
-
-© Buddhi Dassanayake 2024. All rights reserved.
-
+git clone https://github.com/BuddhiDassanayake/baby-growth-tracker-web.git
+cd baby-growth-tracker-web

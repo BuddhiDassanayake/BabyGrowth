@@ -49,24 +49,19 @@ const HeadDiameterChart = ({ userId }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success"); // "success" or "error"
 
-  // ✅ Step 1: Fetch Data from Database
+  // ✅ Step 1: Fetch Data from Database (Updated to show all points)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/measurements/${userId}`);
         const measurements = response.data;
 
-        const groupedData = measurements
+        // Filter for Head Diameter and sort by date without grouping/removing duplicates
+        const formattedData = measurements
           .filter((item) => item.type === "Head Diameter")
-          .reduce((acc, item) => {
-            const dateKey = new Date(item.date).toISOString().split("T")[0];
-            acc[dateKey] = item;
-            return acc;
-          }, {});
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        const aggregatedData = Object.values(groupedData).sort((a, b) => new Date(a.date) - new Date(b.date));
-
-        setHeadDiameterData(aggregatedData);
+        setHeadDiameterData(formattedData);
       } catch (error) {
         console.error("Error fetching measurements:", error);
       }
@@ -148,9 +143,11 @@ const HeadDiameterChart = ({ userId }) => {
         type: "Head Diameter",
       });
   
-      // Fetch the updated data after a successful update
+      // Fetch the updated data after a successful update (Updated to maintain all points)
       const response = await axios.get(`http://localhost:5000/api/measurements/${userId}`);
-      const updatedMeasurements = response.data.filter((item) => item.type === "Head Diameter");
+      const updatedMeasurements = response.data
+        .filter((item) => item.type === "Head Diameter")
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
   
       setHeadDiameterData(updatedMeasurements); // Update state to refresh chart
   
@@ -166,24 +163,19 @@ const HeadDiameterChart = ({ userId }) => {
     }
   };
   
-
-  
-
   // ✅ Step 4: Handle Delete
   const handleDelete = async () => {
     if (!selectedData) return;
 
     try {
-      // Send the delete request with id, date, and type in the request body
       await axios.delete(`http://localhost:5000/api/measurements/${selectedData.id}`, {
         data: {
           id: selectedData.id,
           date: selectedData.date,
-          type: "Head Diameter", // Specify the measurement type
+          type: "Head Diameter",
         }
       });
 
-      // Update the UI by removing the deleted data from the state
       setHeadDiameterData((prevData) => prevData.filter((item) => item.id !== selectedData.id));
 
       setSnackbarMessage("Measurement deleted successfully!");
@@ -205,12 +197,11 @@ const HeadDiameterChart = ({ userId }) => {
         {headDiameterData.length === 0 ? <p>No head diameter data available.</p> : <canvas ref={chartRef}></canvas>}
       </div>
 
-      {/* Snackbar for success/error alerts */}
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
         onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }} // Align Snackbar at the top
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
@@ -221,7 +212,6 @@ const HeadDiameterChart = ({ userId }) => {
         </Alert>
       </Snackbar>
 
-      {/* ✅ Step 5: Responsive MUI Dialog Box */}
       <StyledDialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle sx={{ fontSize: "1.5rem", fontWeight: "bold", textAlign: "center" }}>
           Manage Measurement

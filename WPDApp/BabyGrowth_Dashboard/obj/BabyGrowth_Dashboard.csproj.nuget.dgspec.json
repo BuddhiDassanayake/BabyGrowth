@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj": {}
+    "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj": {
+    "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
+        "projectUniqueName": "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
         "projectName": "BabyGrowth_Dashboard",
-        "projectPath": "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
+        "projectPath": "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard.csproj",
         "packagesPath": "C:\\Users\\buddh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buddh\\Desktop\\GUI Project With Git\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\BabyGrowth_Dashboard\\obj\\",
+        "outputPath": "C:\\Users\\buddh\\Desktop\\Baby grwoth\\BabyGrowth\\WPDApp\\BabyGrowth_Dashboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
