@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BabyGrowth_Dashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3758819e8804f10ad66187e3586cd1da26c8128c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6548dab908552a6bc037bb254e8898eb3e75edf9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BabyGrowth_Dashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BabyGrowth_Dashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

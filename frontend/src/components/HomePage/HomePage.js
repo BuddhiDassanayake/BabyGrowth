@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import Footer from "./Footer/FooterQ";
 
-
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [highlightButton, setHighlightButton] = useState(false);
@@ -93,39 +92,36 @@ const HomePage = () => {
           </div>
         </div>
        {/* Image After Features Section */}
-<div className="image-after-features">
-  <img src="Babies.svg" alt="Baby Growth Illustration" className="features-image" />
-</div>
+        <div className="image-after-features">
+          <img src="Babies.svg" alt="Baby Growth Illustration" className="features-image" />
+        </div>
       </div>
+      
       <div className="image-before-footer">
-  <div className="sub-title-container">
-    <img src="icon-statistics.svg" alt="Statistics Icon" className="static-img" />
-    <h5 className="sub-title1">Statistics</h5>
-  </div>
-  <p className="sub-title2">Height. Weight. Head Circumference.</p>
-  <p className="sub-title3">Add height,weight and head circumference,to see</p><br/><p className="sub-title4"> how your baby develops.</p>
-<img src="staticss.png" alt="ss" className="ss-img"/>
-</div>
+        <div className="sub-title-container">
+          <img src="icon-statistics.svg" alt="Statistics Icon" className="static-img" />
+          <h5 className="sub-title1">Statistics</h5>
+        </div>
+        <p className="sub-title2">Height. Weight. Head Circumference.</p>
+        <p className="sub-title3">Add height,weight and head circumference,to see</p><br/><p className="sub-title4"> how your baby develops.</p>
+        <img src="staticss.png" alt="ss" className="ss-img"/>
+      </div>
 
-<div className="image-before-footer1">
-<div className="sub-title-container2">
-  <img src="icon-milestones.svg" alt="milstone-Icon" className="milstone-Icon"/>
-  <h5 className="sub-topic1">Milestones</h5>
+      <div className="image-before-footer1">
+        <div className="sub-title-container2">
+          <img src="icon-milestones.svg" alt="milstone-Icon" className="milstone-Icon"/>
+          <h5 className="sub-topic1">Milestones</h5>
 
-<p className="sub-topic2">and Achievements</p>
-<p className="sub-topic3">Remember important Milestones like the first Tooth or</p><br/><p className="sub-topic4">the first smile and share it with your Friends and</p>
-<br/><p className="sub-topic5">Family.</p>
-<img src="img2.png" alt="img2" className="img2"/>
-</div>
-</div>
+          <p className="sub-topic2">and Achievements</p>
+          <p className="sub-topic3">Remember important Milestones like the first Tooth or</p><br/><p className="sub-topic4">the first smile and share it with your Friends and</p>
+          <br/><p className="sub-topic5">Family.</p>
+          <img src="img2.png" alt="img2" className="img2"/>
+        </div>
+      </div>
 
-  <>
-    
-    
-    <Footer /> 
-  </>
-
-  
+      <>
+        <Footer /> 
+      </>
 
       {/* Footer Section */}
       <footer className="footer">
